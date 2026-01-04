@@ -1,55 +1,51 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: 1.0.0 → 1.0.0 (initial version)
+- Added sections: Core Principles, Additional Constraints, Development Workflow, Governance
+- Templates requiring updates: ✅ All templates updated
+- Modified principles: N/A (initial constitution)
+- Removed sections: N/A
+- Follow-up TODOs: None
+-->
+# Todo Console Application Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Correctness
+All features must work exactly as specified with no deviations from the intended functionality. Every implementation must undergo thorough validation to ensure it meets the specified requirements.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Simplicity
+Code must be clear, readable, and maintainable. Avoid over-engineering and prefer straightforward solutions that are easy to understand and modify. Follow clean code principles with proper naming and modular functions.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Clean Code
+Maintain proper separation of concerns with well-named functions and clear module organization. Code should be self-documenting with meaningful variable names and logical structure that promotes maintainability.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. User Experience
+Prioritize fully interactive and user-friendly CLI flow. All console prompts and messages must be meaningful and guide the user effectively through the application functionality.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. In-Memory Storage
+Use in-memory data storage only with no external persistence to files or databases. All data should exist only during runtime and be managed efficiently in memory.
 
-### [PRINCIPLE_6_NAME]
+### VI. Complete Task Management
+Implement all 5 basic features: Add task, View tasks (with status indicators), Update task, Delete task by ID, and Mark task as complete/incomplete. Each feature must be fully functional and properly validated.
 
+## Additional Constraints
+- Language: Python 3.13+
+- Tooling: UV-compatible Python project
+- Architecture: Clean project structure with main entry point and logical functions/modules
+- No external persistence or third-party task managers
+- Each task must have: unique ID, title, description, and completion status
+- Input validation for all user actions
 
-[PRINCIPLE__DESCRIPTION]
-
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Development Workflow
+- All CRUD operations must function correctly
+- Application runs entirely in the console
+- User can fully manage tasks interactively
+- Code follows clean code principles and is easy to extend
+- No runtime errors during normal usage
+- Meaningful console prompts and messages for all interactions
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+This constitution serves as the definitive guide for all development decisions in the Todo Console Application. All code changes must align with these principles. Any deviation from these principles requires explicit justification and approval. The constitution supersedes all other practices and serves as the baseline for code reviews and quality gates.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-01-04 | **Last Amended**: 2026-01-04

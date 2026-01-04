@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python src/cli/main.py)",
+      "Bash(python -m src.cli.main)"
+    ]
+  }
+}
